@@ -1,0 +1,43 @@
+Title: **.subckt tb_inverter
+Date: Tue Mar  2 13:28:25  2021
+Plotname: Operating Point
+Flags: real
+No. Variables: 17
+No. Points: 1
+Variables:
+	0	v(out)	voltage
+	1	@m.x1.xm1.msky130_fd_pr__nfet_01v8[gm]	admittance
+	2	i(@m.x1.xm1.msky130_fd_pr__nfet_01v8[id])	current
+	3	@m.x1.xm2.msky130_fd_pr__pfet_01v8[gm]	admittance
+	4	i(@m.x1.xm2.msky130_fd_pr__pfet_01v8[id])	current
+	5	v(m.x1.xm1.msky130_fd_pr__nfet_01v8#body)	voltage
+	6	v(m.x1.xm1.msky130_fd_pr__nfet_01v8#dbody)	voltage
+	7	v(m.x1.xm1.msky130_fd_pr__nfet_01v8#sbody)	voltage
+	8	v(m.x1.xm2.msky130_fd_pr__pfet_01v8#body)	voltage
+	9	v(m.x1.xm2.msky130_fd_pr__pfet_01v8#dbody)	voltage
+	10	v(m.x1.xm2.msky130_fd_pr__pfet_01v8#sbody)	voltage
+	11	i(v1)	current
+	12	i(v2)	current
+	13	i(v3)	current
+	14	v(vdd)	voltage
+	15	v(vin)	voltage
+	16	v(vss)	voltage
+Values:
+ 0	2.306549348833294e-07
+	7.488509345903971e-11
+	1.363707710218084e-10
+	3.049954569892799e-09
+	1.338645305845277e-10
+	2.941413205056575e-18
+	7.351291557327920e-18
+	1.472948057841733e-18
+	1.799999999959858e+00
+	1.799999999934900e+00
+	1.799999999979929e+00
+	0.000000000000000e+00
+	-1.363673618470784e-10
+	3.409362819876134e-15
+	1.800000000000000e+00
+	1.800000000000000e+00
+	0.000000000000000e+00
+

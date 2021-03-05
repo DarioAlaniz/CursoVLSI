@@ -1,0 +1,96 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1614812053
+<< nwell >>
+rect -52 1135 370 1317
+<< pwell >>
+rect 123 216 193 264
+rect -53 -153 369 -52
+<< psubdiff >>
+rect 26 -125 50 -73
+rect 284 -125 308 -73
+<< nsubdiff >>
+rect -13 1185 84 1227
+rect 231 1185 332 1227
+<< psubdiffcont >>
+rect 50 -125 284 -73
+<< nsubdiffcont >>
+rect 84 1185 231 1227
+<< poly >>
+rect 123 216 193 264
+<< viali >>
+rect -20 1227 336 1228
+rect -20 1185 84 1227
+rect 84 1185 231 1227
+rect 231 1185 336 1227
+rect -16 1068 334 1102
+rect -18 -17 333 17
+rect -29 -73 346 -71
+rect -29 -125 50 -73
+rect 50 -125 284 -73
+rect 284 -125 346 -73
+rect -29 -126 346 -125
+<< metal1 >>
+rect -52 1228 370 1234
+rect -52 1185 -20 1228
+rect 336 1185 370 1228
+rect -52 1184 370 1185
+rect -33 1179 348 1184
+rect -33 1108 345 1179
+rect -33 1102 346 1108
+rect -33 1068 -16 1102
+rect 334 1068 346 1102
+rect -33 1063 346 1068
+rect -28 1062 346 1063
+rect 98 702 133 1062
+rect 221 975 252 1000
+rect 186 698 252 975
+rect 125 601 193 651
+rect 135 462 180 601
+rect 120 410 130 462
+rect 182 410 192 462
+rect 221 460 252 698
+rect 135 264 180 410
+rect 221 408 237 460
+rect 289 408 299 460
+rect 123 216 193 264
+rect 94 23 136 175
+rect 221 173 252 408
+rect 182 98 252 173
+rect 221 87 252 98
+rect -30 22 345 23
+rect -31 17 347 22
+rect -31 -17 -18 17
+rect 333 -17 347 17
+rect -31 -63 347 -17
+rect -54 -71 370 -63
+rect -54 -126 -29 -71
+rect 346 -126 370 -71
+rect -54 -133 370 -126
+<< via1 >>
+rect 130 410 182 462
+rect 237 408 289 460
+<< metal2 >>
+rect 130 462 182 472
+rect -52 410 130 462
+rect 237 460 289 470
+rect 130 400 182 410
+rect 236 408 237 460
+rect 289 408 370 460
+rect 237 398 289 408
+rect 123 216 193 264
+use sky130_fd_pr__pfet_01v8_7KP3BC  sky130_fd_pr__pfet_01v8_7KP3BC_0
+timestamp 1614812053
+transform 1 0 159 0 1 804
+box -211 -334 211 334
+use sky130_fd_pr__nfet_01v8_A4WUDG  sky130_fd_pr__nfet_01v8_A4WUDG_0
+timestamp 1614812053
+transform 1 0 158 0 1 171
+box -211 -224 211 224
+<< labels >>
+rlabel metal2 -52 410 130 462 1 in
+rlabel metal2 289 408 370 460 1 out
+rlabel nwell 84 1185 231 1227 1 vdd
+rlabel pwell 50 -125 284 -73 1 vss
+<< end >>

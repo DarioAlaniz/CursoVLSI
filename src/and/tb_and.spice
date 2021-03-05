@@ -1,0 +1,63 @@
+**.subckt tb_and
+x1 vdd C out A vss and
+V1 vss GND 0
+V2 vdd vss 1.8
+V3 A vss PULSE(0 {A} 1ps 1ps 1ps 50ns 100ns) DC{A} 
+x2 vdd net1 out vss inverter
+V4 C vss PULSE(0 {C} 1ps 1ps 1ps 50ns 100ns) DC{C} 
+**** begin user architecture code
+
+blabla
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  and/and.sym # of pins=5
+* sym_path: /home/eamta/eamta2021/sch/and/and.sym
+* sch_path: /home/eamta/eamta2021/sch/and/and.sch
+.subckt and  vdd B out A vss
+*.ipin vdd
+*.ipin vss
+*.opin out
+*.ipin B
+*.ipin A
+XM1 net2 A vss vss sky130_fd_pr__nfet_01v8 L=0.15 W='wn' nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM2 net1 B vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W='wp' nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM3 net1 B net2 vss sky130_fd_pr__nfet_01v8 L=0.15 W='wn' nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM4 net1 A vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W='wp' nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM5 out net1 vss vss sky130_fd_pr__nfet_01v8 L=0.15 W='wn' nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM6 out net1 vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W='wp' nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+.ends
+
+
+* expanding   symbol:  inverter/inverter.sym # of pins=4
+* sym_path: /home/eamta/eamta2021/sch/inverter/inverter.sym
+* sch_path: /home/eamta/eamta2021/sch/inverter/inverter.sch
+.subckt inverter  vdd out in vss
+*.opin out
+*.ipin in
+*.ipin vss
+*.ipin vdd
+XM1 out in vss vss sky130_fd_pr__nfet_01v8 L=0.15 W=0.45 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM2 out in vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W=1.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+.ends
+
+.GLOBAL GND
+** flattened .save nodes
+.end

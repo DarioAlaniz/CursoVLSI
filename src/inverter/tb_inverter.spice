@@ -1,0 +1,76 @@
+**.subckt tb_inverter
+x1 vdd out vin vss inverter
+V1 vin vss PULSE(0,{vin} 1ps 1ps 1ps 50ns 100ns) DC{vin} 
+V2 vdd vss 1.8
+V3 vss GND 0
+C1 out vss 1p m=1
+**** begin user architecture code
+
+
+
+*Parametros del circuito
+.param vin=1.8 Wp=1.5 Wn=0.45
+.options TEMP = 27.0 *deafult
+
+*Include
+.lib /home/eamta/skywater/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/sky130.lib TT
+
+*Signal to Save
+.save all   @M.x1.xM1.msky130_fd_pr__nfet_01v8[id] @M.x1.xM1.msky130_fd_pr__nfet_01v8[gm]  @M.x1.xM2.msky130_fd_pr__pfet_01v8[id] @M.x1.xM2.msky130_fd_pr__pfet_01v8[gm]
+
+*Simulacion
+.control
+ tran 0.1n 0.5us
+ setplot tran1
+ plot v(out) v(vin)
+ set filetype = ascii *para guardar en ascii
+ write tb_inverter_tran.raw
+
+ reset
+ dc v1 0 1.8 0.01
+ setplot dc1
+ plot v(out) v(vin)
+ plot @M.x1.xM1.msky130_fd_pr__nfet_01v8[id]
+ set filetype = ascii
+ write tb_inverter_dc.raw
+
+ reset
+ op
+ set filetype = ascii
+ write tb_inverter.raw
+ print all
+
+ reset
+ dc v1 0 1.8 0.01
+ setplot id
+ plot @M.x1.xM1.msky130_fd_pr__nfet_01v8[id]
+ set filetype = ascii
+ write tb_inverter_id.raw
+
+.endc
+
+
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  inverter/inverter.sym # of pins=4
+* sym_path: /home/eamta/eamta2021/sch/inverter/inverter.sym
+* sch_path: /home/eamta/eamta2021/sch/inverter/inverter.sch
+.subckt inverter  vdd out in vss
+*.opin out
+*.ipin in
+*.ipin vss
+*.ipin vdd
+XM1 out in vss vss sky130_fd_pr__nfet_01v8 L=0.15 W='Wn' nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+XM2 out in vdd vdd sky130_fd_pr__pfet_01v8 L=0.15 W='Wp' nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1 
+.ends
+
+.GLOBAL GND
+** flattened .save nodes
+.end
