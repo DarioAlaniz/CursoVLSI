@@ -1,0 +1,48 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1615219787
+<< nwell >>
+rect -629 769 3 949
+rect -629 380 0 769
+<< psubdiff >>
+rect -480 -11 -456 23
+rect -216 -11 -192 23
+<< nsubdiff >>
+rect -487 788 -463 822
+rect -223 788 -199 822
+<< psubdiffcont >>
+rect -456 -11 -216 23
+<< nsubdiffcont >>
+rect -463 788 -223 822
+<< poly >>
+rect -405 286 -374 517
+rect -318 285 -287 516
+<< locali >>
+rect -479 788 -463 822
+rect -223 788 -207 822
+rect -472 -11 -456 23
+rect -216 -11 -200 23
+<< metal1 >>
+rect -458 -9 -412 264
+<< comment >>
+rect -545 807 405 808
+rect 8 6 10 806
+rect -629 5 433 6
+use sky130_fd_pr__nfet_01v8_P8KVP3  sky130_fd_pr__nfet_01v8_P8KVP3_0
+timestamp 1615219787
+transform 1 0 -391 0 1 180
+box -73 -116 73 116
+use sky130_fd_pr__nfet_01v8_P8KVP3  sky130_fd_pr__nfet_01v8_P8KVP3_1
+timestamp 1615219787
+transform 1 0 -303 0 1 180
+box -73 -116 73 116
+use sky130_fd_pr__pfet_01v8_5AYHFE  sky130_fd_pr__pfet_01v8_5AYHFE_1
+timestamp 1615219787
+transform 1 0 -302 0 1 627
+box -109 -152 109 152
+use sky130_fd_pr__pfet_01v8_5AYHFE  sky130_fd_pr__pfet_01v8_5AYHFE_0
+timestamp 1615219787
+transform 1 0 -390 0 1 627
+box -109 -152 109 152
+<< end >>
