@@ -1,0 +1,21 @@
+* NGSPICE file created from nand.ext - technology: sky130A
+
+.subckt sky130_fd_pr__nfet_01v8_P8KVP3 VSUBS a_n15_n116# a_n73_n90# a_15_n90#
+X0 a_15_n90# a_n15_n116# a_n73_n90# VSUBS sky130_fd_pr__nfet_01v8 ad=2.61e+11p pd=2.38e+06u as=2.61e+11p ps=2.38e+06u w=900000u l=150000u
+.ends
+
+.subckt sky130_fd_pr__pfet_01v8_5AYHFE VSUBS a_n15_n116# a_n73_n90# w_n109_n152# a_15_n90#
+X0 a_15_n90# a_n15_n116# a_n73_n90# w_n109_n152# sky130_fd_pr__pfet_01v8 ad=2.61e+11p pd=2.38e+06u as=2.61e+11p ps=2.38e+06u w=900000u l=150000u
+.ends
+
+
+* Top level circuit nand
+
+Xsky130_fd_pr__nfet_01v8_P8KVP3_0 vss A vss sky130_fd_pr__nfet_01v8_P8KVP3_0/a_15_n90#
++ sky130_fd_pr__nfet_01v8_P8KVP3
+Xsky130_fd_pr__nfet_01v8_P8KVP3_1 vss B sky130_fd_pr__nfet_01v8_P8KVP3_0/a_15_n90#
++ out sky130_fd_pr__nfet_01v8_P8KVP3
+Xsky130_fd_pr__pfet_01v8_5AYHFE_0 vss A vdd vdd out sky130_fd_pr__pfet_01v8_5AYHFE
+Xsky130_fd_pr__pfet_01v8_5AYHFE_1 vss B out vdd vdd sky130_fd_pr__pfet_01v8_5AYHFE
+.end
+

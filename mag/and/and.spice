@@ -1,0 +1,32 @@
+* NGSPICE file created from and.ext - technology: sky130A
+
+.subckt sky130_fd_pr__pfet_01v8_5AYHFE VSUBS a_n15_n116# a_n73_n90# w_n109_n152# a_15_n90#
+X0 a_15_n90# a_n15_n116# a_n73_n90# w_n109_n152# sky130_fd_pr__pfet_01v8 ad=2.61e+11p pd=2.38e+06u as=2.61e+11p ps=2.38e+06u w=900000u l=150000u
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_J836M4 VSUBS a_n73_n45# a_n15_n71# a_15_n45#
+X0 a_15_n45# a_n15_n71# a_n73_n45# VSUBS sky130_fd_pr__nfet_01v8 ad=1.305e+11p pd=1.48e+06u as=1.305e+11p ps=1.48e+06u w=450000u l=150000u
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_P8KVP3 VSUBS a_n15_n116# a_n73_n90# a_15_n90#
+X0 a_15_n90# a_n15_n116# a_n73_n90# VSUBS sky130_fd_pr__nfet_01v8 ad=2.61e+11p pd=2.38e+06u as=2.61e+11p ps=2.38e+06u w=900000u l=150000u
+.ends
+
+.subckt nand m1_n361_477# vss vdd
+Xsky130_fd_pr__nfet_01v8_P8KVP3_0 vss A vss sky130_fd_pr__nfet_01v8_P8KVP3_0/a_15_n90#
++ sky130_fd_pr__nfet_01v8_P8KVP3
+Xsky130_fd_pr__nfet_01v8_P8KVP3_1 vss B sky130_fd_pr__nfet_01v8_P8KVP3_0/a_15_n90#
++ m1_n361_477# sky130_fd_pr__nfet_01v8_P8KVP3
+Xsky130_fd_pr__pfet_01v8_5AYHFE_0 vss A vdd vdd m1_n361_477# sky130_fd_pr__pfet_01v8_5AYHFE
+Xsky130_fd_pr__pfet_01v8_5AYHFE_1 vss B m1_n361_477# vdd vdd sky130_fd_pr__pfet_01v8_5AYHFE
+.ends
+
+
+* Top level circuit and
+
+Xsky130_fd_pr__pfet_01v8_5AYHFE_0 nand_0/vss a_463_314# nand_0/vdd nand_0/vdd out
++ sky130_fd_pr__pfet_01v8_5AYHFE
+Xsky130_fd_pr__nfet_01v8_J836M4_0 nand_0/vss nand_0/vss a_463_314# out sky130_fd_pr__nfet_01v8_J836M4
+Xnand_0 a_463_314# nand_0/vss nand_0/vdd nand
+.end
+

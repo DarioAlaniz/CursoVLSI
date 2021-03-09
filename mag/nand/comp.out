@@ -1,0 +1,18 @@
+Flattening unmatched subcell sky130_fd_pr__nfet_01v8_P8KVP3 in circuit nand.spice (1)(2 instances)
+Flattening unmatched subcell sky130_fd_pr__pfet_01v8_5AYHFE in circuit nand.spice (1)(2 instances)
+Equate elements:  no current cell.
+Equate elements:  no current cell.
+
+Subcircuit summary:
+Circuit 1: ../../sch/nand/nand.spice       |Circuit 2: nand.spice                      
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_01v8 (2)                |sky130_fd_pr__nfet_01v8 (2)                
+sky130_fd_pr__pfet_01v8 (2)                |sky130_fd_pr__pfet_01v8 (2)                
+Number of devices: 4                       |Number of devices: 4                       
+Number of nets: 6                          |Number of nets: 6                          
+---------------------------------------------------------------------------------------
+Circuits match uniquely.
+Netlists match uniquely.
+Cells have no pins;  pin matching not needed.
+Device classes ../../sch/nand/nand.spice and nand.spice are equivalent.
+Circuits match uniquely.
