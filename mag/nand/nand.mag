@@ -1,10 +1,17 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1615219787
+timestamp 1615245564
 << nwell >>
 rect -629 769 3 949
-rect -629 380 0 769
+rect -629 517 0 769
+rect -629 485 -405 517
+rect -374 516 0 517
+rect -374 485 -318 516
+rect -287 485 0 516
+rect -629 484 -493 485
+rect -198 484 0 485
+rect -629 470 0 484
 << psubdiff >>
 rect -480 -11 -456 23
 rect -216 -11 -192 23
@@ -16,33 +23,64 @@ rect -456 -11 -216 23
 << nsubdiffcont >>
 rect -463 788 -223 822
 << poly >>
-rect -405 286 -374 517
-rect -318 285 -287 516
+rect -405 382 -375 513
+rect -317 449 -287 511
+rect -322 441 -250 449
+rect -326 411 -250 441
+rect -322 389 -250 411
+rect -467 370 -375 382
+rect -472 339 -375 370
+rect -467 322 -375 339
+rect -405 295 -375 322
+rect -317 296 -287 389
 << locali >>
 rect -479 788 -463 822
 rect -223 788 -207 822
 rect -472 -11 -456 23
 rect -216 -11 -200 23
+<< viali >>
+rect -310 395 -262 443
+rect -455 328 -407 376
 << metal1 >>
+rect -454 550 -412 822
+rect -360 509 -332 674
+rect -276 550 -234 822
+rect -360 481 -184 509
+rect -322 443 -250 449
+rect -322 439 -310 443
+rect -574 411 -310 439
+rect -322 395 -310 411
+rect -262 395 -250 443
+rect -322 389 -250 395
+rect -467 376 -395 382
+rect -467 367 -455 376
+rect -574 339 -455 367
+rect -467 328 -455 339
+rect -407 328 -395 376
+rect -467 322 -395 328
+rect -213 324 -185 481
+rect -274 292 -185 324
+rect -274 264 -235 292
 rect -458 -9 -412 264
+rect -274 218 -241 264
 << comment >>
 rect -545 807 405 808
 rect 8 6 10 806
 rect -629 5 433 6
 use sky130_fd_pr__nfet_01v8_P8KVP3  sky130_fd_pr__nfet_01v8_P8KVP3_0
-timestamp 1615219787
-transform 1 0 -391 0 1 180
+timestamp 1615245166
+transform 1 0 -390 0 1 180
 box -73 -116 73 116
 use sky130_fd_pr__nfet_01v8_P8KVP3  sky130_fd_pr__nfet_01v8_P8KVP3_1
-timestamp 1615219787
-transform 1 0 -303 0 1 180
+timestamp 1615245166
+transform 1 0 -302 0 1 180
 box -73 -116 73 116
-use sky130_fd_pr__pfet_01v8_5AYHFE  sky130_fd_pr__pfet_01v8_5AYHFE_1
-timestamp 1615219787
-transform 1 0 -302 0 1 627
-box -109 -152 109 152
 use sky130_fd_pr__pfet_01v8_5AYHFE  sky130_fd_pr__pfet_01v8_5AYHFE_0
 timestamp 1615219787
 transform 1 0 -390 0 1 627
+box -109 -152 109 152
+use sky130_fd_pr__pfet_01v8_5AYHFE  sky130_fd_pr__pfet_01v8_5AYHFE_1
+timestamp 1615219787
+transform 1 0 -302 0 1 627
 box -109 -152 109 152
 << end >>
